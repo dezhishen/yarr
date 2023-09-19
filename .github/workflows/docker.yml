@@ -30,6 +30,8 @@ jobs:
           push: true
           context: .
           file: ./dockerfile
+          build-args: |
+            VERSION=${{ env.APP_VERSION }}
           platforms:  |
             linux/386
             linux/amd64
