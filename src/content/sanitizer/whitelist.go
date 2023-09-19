@@ -211,7 +211,7 @@ var allowedSvgFilters = sset([]string{
 })
 
 var allowedAttrs = map[string]set{
-	"img":     sset([]string{"alt", "title", "src", "srcset", "sizes"}),
+	"img":     sset([]string{"alt", "referrerpolicy", "title", "src", "srcset", "sizes"}),
 	"audio":   sset([]string{"src"}),
 	"video":   sset([]string{"poster", "height", "width", "src"}),
 	"source":  sset([]string{"src", "type", "srcset", "sizes", "media"}),
