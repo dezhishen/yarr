@@ -2,8 +2,10 @@ FROM golang:alpine AS build
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 RUN apk add build-base git
 WORKDIR /src
+RUN mkdir -p _output/linux
+ARG TARGETARCH=amd64
 COPY . .
-RUN make build_linux
+RUN go build -tags "sqlite_foreign_keys release linux" -ldflags="-s -w -X 'main.Version=2.4'" -o _output/linux/yarr src/main.go
 
 FROM alpine:latest
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
