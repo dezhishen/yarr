@@ -47,3 +47,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: dezhishen/yarr
+          readme-filepath: ./readme.md
