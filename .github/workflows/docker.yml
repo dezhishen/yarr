@@ -39,5 +39,5 @@ jobs:
             linux/arm/v7
             linux/arm64/v8
           tags: |
-            dezhishen/yarr:latest
             dezhishen/yarr:${{ env.APP_VERSION }}
+            dezhishen/yarr:latest
