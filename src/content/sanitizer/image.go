@@ -22,7 +22,7 @@ func isImageProxyURL(imageUrl string) bool {
 		return false
 	}
 	for _, domain := range imgProxyDomainSlice {
-		if matched, _ := regexp.MatchString(strings.ReplaceAll(domain, ".", "\\."), uri.Host); matched {
+		if matched, _ := regexp.MatchString(strings.ReplaceAll(strings.ReplaceAll(domain, ".", "\\."), "*", ".*"), uri.Host); matched {
 			return false
 		}
 	}
